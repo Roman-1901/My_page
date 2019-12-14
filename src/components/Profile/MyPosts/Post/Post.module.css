@@ -1,0 +1,18 @@
+.item {
+    display: flex;
+    color: blue;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .item img {
+    margin-left: 5px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .postText {
+    width: 85%;
+    margin-left: 20px;
+    text-align: justify; 
+  }

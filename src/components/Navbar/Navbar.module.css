@@ -1,0 +1,22 @@
+.nav {
+  grid-area: n;
+  background-color: burlywood;
+  
+  }
+
+  nav a {
+    text-decoration: none;
+  }
+
+  nav a :hover {
+    color: gold;
+  }
+
+.item {
+  margin-left: 10px;
+  color: #fff; 
+}
+
+.item.active {
+  color: gold;
+}
