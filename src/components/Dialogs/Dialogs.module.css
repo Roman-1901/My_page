@@ -7,8 +7,16 @@
     padding: 10px;
 }
 
+.dialogsItems a {
+    text-decoration: none;
+}
+
 .dialog {
 
+}
+
+.dialog a:hover {
+    color: gold;
 }
 
 .active {

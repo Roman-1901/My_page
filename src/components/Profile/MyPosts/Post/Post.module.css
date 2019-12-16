@@ -16,3 +16,14 @@
     margin-left: 20px;
     text-align: justify; 
   }
+
+  .likes {
+    font-size: 12px;
+    color: red;
+    display: flex;
+  }
+
+  .likesItem:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }

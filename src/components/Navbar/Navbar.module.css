@@ -5,7 +5,7 @@
   }
 
 
-  .item :hover {
+  .item a:hover {
     color: gold;
   }
 

@@ -2,15 +2,21 @@ import React from 'react';
 import classes from './Posts.module.css';
 import Post from './Post/Post';
 
+let postData = [
+    {id: 1, message: "My first post", count: 10},
+    {id: 2, message: "My second post", count: 8}
+] 
+
+let post = postData.map(p => <Post message = {p.message} count = {p.count} />);
+
 const Posts= () => {
     return  <div className={classes.posts}> 
-                    My posts
-                    <div>
-                    <textarea></textarea>
-                    <button>Add post</button>
-                    </div>
-                    <Post message = "My first post" image = "https://smartprogress.do/uploadImages/001018254.jpg" />
-                    <Post message = "My second post" image = "https://besthqwallpapers.com/Uploads/17-10-2017/24364/minion-4k-security-guard-minions-despicable-me.jpg"/>
+                    <div className={classes.myPosts}>
+                    <div>My posts</div>
+                    <div><textarea></textarea></div>
+                    <div><button>Add post</button></div>    
+                    </div> 
+                    {post}
             </div>
             
 }
