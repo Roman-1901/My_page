@@ -1,6 +1,8 @@
 let state = {
     
     ProfilePage: {
+    profileInfo: 'https://s1.1zoom.me/big0/994/260356-svetik.jpg',
+    profileAvatar: "https://avatars.mds.yandex.net/get-pdb/1920338/5894aed1-7647-41b8-8e98-a988f22eb1ed/s1200",
     postData: [
         {id: 1, message: "My first post", count: 10},
         {id: 2, message: "My second post", count: 8}

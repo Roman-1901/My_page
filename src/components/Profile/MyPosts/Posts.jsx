@@ -5,7 +5,7 @@ import Post from './Post/Post';
 
 const Posts= (props) => {
     
-    let post = props.postData.map(p => <Post message = {p.message} count = {p.count} />);
+    let post = props.postData.map(p => <Post message = {p.message} count = {p.count} ava = {props.profileAvatar}/>);
 
     return  <div className={classes.posts}> 
                     <div className={classes.myPosts}>

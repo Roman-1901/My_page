@@ -4,9 +4,10 @@ import classes from './Post.module.css';
 
 
 
+
 const Post= (props) => {
     return  <div className={classes.item}>
-                        <img src = "https://smartprogress.do/uploadImages/001018254.jpg" />
+                        <img src = {props.ava} />
                         <div className={classes.postText}>
                             {props.message}
                             <div className={classes.likes}>

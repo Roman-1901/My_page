@@ -2,10 +2,10 @@ import React from 'react';
 import classes from './ProfileInfo.module.css';
 
 
-const ProfileInfo= () => {
+const ProfileInfo= (props) => {
     return  <div>
                 <div>
-                    <img src='https://s1.1zoom.me/big0/994/260356-svetik.jpg'></img>
+                    <img src={props.profileInfo}></img>
                 </div>
                 <div className={classes.ava}>
                     ava + description
