@@ -1,3 +1,5 @@
+import {rendering} from './../render';
+
 let state = {
     SideBar: {
         navBar: [
@@ -41,6 +43,7 @@ export let addPost = (postMessage) => {
         count: 0
     };
     state.ProfilePage.postData.push (newPost);
+    rendering(state);
 }
 
 
