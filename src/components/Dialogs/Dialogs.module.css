@@ -53,3 +53,13 @@
    left: 35px;
 }
 
+.addText {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+textarea {
+    width: 600px;
+    height: 100px;
+}
+
