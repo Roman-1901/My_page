@@ -4,6 +4,7 @@
 }
 
 .dialogsItems {
+
     padding: 10px;
 }
 
@@ -11,8 +12,14 @@
     text-decoration: none;
 }
 
-.dialog {
+.avaFriend {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
 
+.dialog {
+    position: relative;
 }
 
 .dialog a:hover {
@@ -27,7 +34,22 @@
     padding: 10px;
 }
 
-.message {
+.myMessage {
+    margin-left: 50%;
+    background-color: green;
+    width: 40%; 
+    margin-top: 10px;
+}
 
+.friendMessage {
+    background-color: gray;
+    width: 40%;
+    margin-top: 10px;
+}
+
+.name {
+   position: absolute;
+   top: 10%;
+   left: 35px;
 }
 
