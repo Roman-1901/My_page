@@ -1,4 +1,6 @@
-import {rendering} from './../render';
+let rendering = () => {
+    console.log("Warning!");
+}
 
 let state = {
     SideBar: {
@@ -12,6 +14,7 @@ let state = {
     },
     
     ProfilePage: {
+    newPostText: "",
     profileInfo: 'https://s1.1zoom.me/big0/994/260356-svetik.jpg',
     profileAvatar: "https://avatars.mds.yandex.net/get-pdb/1920338/5894aed1-7647-41b8-8e98-a988f22eb1ed/s1200",
     postData: [
@@ -20,6 +23,7 @@ let state = {
     ]   },
 
     DialogsPage: {
+    newMessageText: "",
     dialogItem: [
         {id: 1, name: "Jenya", ava: "https://avatars.mds.yandex.net/get-pdb/992060/ecf58b1a-0607-4ef5-ab53-e42f6dc3c940/s1200"},
         {id: 2, name: "Anton", ava: "https://avatars.mds.yandex.net/get-pdb/1016500/1590a8d6-1327-407f-b5ad-e33f18b48ac6/s1200"},
@@ -32,19 +36,43 @@ let state = {
         {id: 2, messageFriend: "Huy sosi"},
         {id: 3, messageFriend: "Вы можете использовать переменные для хранения элементов. Это может помочь вам по условию отрисовать часть компонента, в то время как остальная часть вывода не изменится."},
         {id: 4, messageMy: "Выравнивание текста по центру. Текст помещается по центру горизонтали окна браузера или контейнера, где расположен текстовый блок. Строки текста словно нанизываются на невидимую ось, которая проходит по центру веб-страницы. Подобный способ выравнивания активно используется в заголовках и различных подписях, вроде подрисуночных, он придает официальный и солидный вид оформлению текста. Во всех других случаях выравнивание по центру применяется редко по той причине, что читать большой объем такого текста неудобно."},
-        {id: 3, messageFriend: "Guboy tryasi"}
+        {id: 5, messageFriend: "Guboy tryasi"}
     ] }
 }
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
     let newPost = {
         id: 3,
-        message: postMessage,
+        message: state.ProfilePage.newPostText,
         count: 0
     };
+    if (state.ProfilePage.newPostText != "") {
     state.ProfilePage.postData.push (newPost);
-    rendering(state);
+    state.ProfilePage.newPostText = "";
+    rendering();}
 }
 
+export let onChangePost = (newText) => {
+    state.ProfilePage.newPostText = newText;
+    rendering();
+}
+
+export let addText = (textMessage) => {
+    let newText = {
+        id: 6,
+        messageMy: state.DialogsPage.newMessageText };
+    state.DialogsPage.messageItem.push (newText);
+    state.DialogsPage.newMessageText = "";
+    rendering();
+    }
+
+export let onChangeText = (newText) => {
+    state.DialogsPage.newMessageText = newText;
+    rendering();
+}
+
+export const startProject = (service) => {
+    rendering = service;
+    }
 
 export default state;
