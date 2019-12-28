@@ -1,22 +1,24 @@
 import React from 'react';
 import classes from './Posts.module.css';
 import Post from './Post/Post';
+import {addPostCreator, onChangePostCreator} from '../../../redux/state';
 
 
 const Posts= (props) => {
     
     let post = props.postData.map(p => <Post message = {p.message} count = {p.count} ava = {props.profileAvatar}/>);
 
-    let newPostElement = React.createRef();
+
+    
 
     let addPost = () => {
-        let text = newPostElement.current.value;
-        props.addPost(text);
+        props.dispatch(addPostCreator());
     }
 
+    let newPostElement = React.createRef();
     let onChangePost = () => {
         let text = newPostElement.current.value;
-        props.onChangePost(text);
+        props.dispatch(onChangePostCreator(text));
     }
 
     return  <div className={classes.posts}> 

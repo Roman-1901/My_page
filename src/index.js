@@ -7,7 +7,7 @@ import App from './App';
 
 export let rendering =() => {
 
-ReactDOM.render(<App state = {store._state} addPost = {store.addPost.bind(store)} addText = {store.addText.bind(store)} onChangePost = {store.onChangePost.bind(store)} onChangeText = {store.onChangeText.bind(store)} />, document.getElementById('root'));
+ReactDOM.render(<App state = {store.getState()} dispatch = {store.dispatch.bind(store)} />, document.getElementById('root'));
 }
 
 rendering();
