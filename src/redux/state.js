@@ -1,3 +1,6 @@
+import { ProfileReducer } from "./ProfileReducer";
+import { DialogsReducer } from "./DialogsReducer";
+
 let addPost = 'addPost';
 let onChangePost = 'onChangePost';
 let addText = 'addText'; 
@@ -51,36 +54,10 @@ let store = {
     },
 
     dispatch(action) {
-        if (action.type === addPost) {
-            let newPost = {
-                id: 3,
-                message: this._state.ProfilePage.newPostText,
-                count: 0
-            };
-            if (this._state.ProfilePage.newPostText != "") {
-            this._state.ProfilePage.postData.push (newPost);
-            this._state.ProfilePage.newPostText = "";
-            this.rendering();}
-        } else if (action.type === onChangePost) {
-            this._state.ProfilePage.newPostText = action.newText;
-            this.rendering();
-        } else if (action.type === addText) {
-            let newText = {
-                id: 6,
-                messageMy: this._state.DialogsPage.newMessageText };
-            this._state.DialogsPage.messageItem.push (newText);
-            this._state.DialogsPage.newMessageText = "";
-            this.rendering();
-        } else if (action.type === onChangeText) {
-            this._state.DialogsPage.newMessageText = action.newText;
-            this.rendering();
-        }
-    }  
+        this._state.ProfilePage = ProfileReducer(this._state.ProfilePage, action);
+        this._state.DialogsPage = DialogsReducer(this._state.DialogsPage, action);
+        this.rendering();}
 }
 
-export const addPostCreator = () => ({type: addPost});
-export const onChangePostCreator = (text) => ({type: onChangePost, newText:text});
-export const addTextCreator = () => ({type: addText});
-export const onChangeTextCreator = (text) => ({type: onChangeText, newText:text});
 
 export default store;
