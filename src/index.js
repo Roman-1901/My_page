@@ -1,4 +1,4 @@
-import store from './redux/state';
+import store from './redux/redux-store';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -12,7 +12,7 @@ ReactDOM.render(<App state = {store.getState()} dispatch = {store.dispatch.bind(
 
 rendering();
 
-store.startProject(rendering);
+store.subscribe (rendering);
 
 
 
