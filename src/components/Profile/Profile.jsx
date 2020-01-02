@@ -1,16 +1,15 @@
 import React from 'react';
-import classes from './Profile.module.css';
-import Posts from './MyPosts/Posts';
+import PostsContainer from './MyPosts/PostsContainer';
 import ProfileInfo from './ProfileInfo/ProgileInfo';
 
 
 
 const Profile = (props) => {
-
+    let ProfilePage = props.store.getState().ProfilePage;
 
         return <div>
-                    <ProfileInfo profileInfo = {props.ProfilePage.profileInfo}/>
-                    <Posts newPostText = {props.ProfilePage.newPostText} postData = {props.ProfilePage.postData} profileAvatar = {props.ProfilePage.profileAvatar} dispatch = {props.dispatch} />
+                    <ProfileInfo profileInfo = {ProfilePage.profileInfo}/>
+                    <PostsContainer store = {props.store} />
                 </div>
 }
 
