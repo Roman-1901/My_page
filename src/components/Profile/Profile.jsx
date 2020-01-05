@@ -5,11 +5,11 @@ import ProfileInfo from './ProfileInfo/ProgileInfo';
 
 
 const Profile = (props) => {
-    let ProfilePage = props.store.getState().ProfilePage;
+    let ProfilePage = props.ProfilePage;
 
         return <div>
                     <ProfileInfo profileInfo = {ProfilePage.profileInfo}/>
-                    <PostsContainer store = {props.store} />
+                    <PostsContainer ProfilePage />
                 </div>
 }
 
