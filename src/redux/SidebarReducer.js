@@ -3,6 +3,7 @@ let initialstate = {
     navBar: [
         {link: "/profile", title: "Profile"},
         {link: "/messages", title: "Messages"},
+        {link: "/users", title: "Users"},
         {link: "/news", title: "News"},
         {link: "/music", title: "Music"},
         {link: "/settings", title: "Settings"}
